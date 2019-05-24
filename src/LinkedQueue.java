@@ -36,6 +36,7 @@ public class LinkedQueue<E> {
 		}
 
 		last.element = element;
+		size++;
 	}
 
 	public E dequeue(){
@@ -46,6 +47,7 @@ public class LinkedQueue<E> {
 
 		if(isEmpty()) last = null;
 
+		size--;
 		return element;
 	}
 
