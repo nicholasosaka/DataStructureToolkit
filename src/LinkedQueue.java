@@ -25,10 +25,14 @@ public class LinkedQueue<E> {
 	}
 
 	public void enqueue(E element){
+		Node prev = last;
+		last = new Node();
+		last.element = element;
+
 		if(isEmpty()){
 			first.element = element;
 		} else {
-			last.next.element = element;
+			prev.next = last;
 		}
 
 		last.element = element;
