@@ -1,6 +1,6 @@
 package HashTables;
 
-import java.util.ArrayList;
+import java.util.Hashtable;
 
 /*
 	@author Nikko Osaka
@@ -9,17 +9,24 @@ import java.util.ArrayList;
 	Simple dictionary with worst case constant lookup time
 
  */
-public class Cuckoo<E> {
+public class Cuckoo<K, V> {
 
 	//two tables for hashing
-	ArrayList<E> T1 = new ArrayList<E>();
-	ArrayList<E> T2 = new ArrayList<E>();
+	Hashtable<K, V> T1;
+	Hashtable<K, V> T2;
 
 	//fields
-	private int num = 10;
+	private int r = 10;
 	private int size;
 
 	public Cuckoo(){
+		T1 = new Hashtable<>();
+		T2 = new Hashtable<>();
 
 	}
+
+	public boolean lookup(K key){
+		return T1.get(key) == key || T2.get(key) == key;
+	}
+
 }
