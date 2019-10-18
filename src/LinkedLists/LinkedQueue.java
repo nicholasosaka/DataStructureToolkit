@@ -1,3 +1,5 @@
+package LinkedLists;
+
 import java.util.NoSuchElementException;
 
 public class LinkedQueue<E> {
@@ -51,7 +53,7 @@ public class LinkedQueue<E> {
 		return element;
 	}
 
-	//small helper class for allowing for more generic use of the LinkedQueue class
+	//small helper class for allowing for more generic use of the LinkedLists.LinkedQueue class
 	private class Node{
 		private E element;
 		private Node next;
